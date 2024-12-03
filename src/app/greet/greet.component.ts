@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GreetingService } from '../shared/greeting.service';
 
 @Component({
   selector: 'app-greet',
@@ -9,4 +10,10 @@ import { Component } from '@angular/core';
 })
 export class GreetComponent {
 
+  greeting !: string;
+
+  constructor(private gr: GreetingService){
+    this.greeting = gr.greet('Pali');
+    
+  }
 }
